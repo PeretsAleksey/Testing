@@ -31,10 +31,8 @@ public class RefactorPageCommand extends Command {
         String name = req.getParameter("name");
 
         if ("answer".equals(name)) {
-
             String answerId = req.getParameter(ANSWER_ID);
             session.setAttribute(ANSWER_ID, answerId);
-
         } else if ("deleteTheme".equals(name)) {
             String themeId = req.getParameter("theme");
             session.setAttribute("themeId", themeId);

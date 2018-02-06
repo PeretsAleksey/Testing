@@ -39,8 +39,6 @@ public class LoginCommand extends Command {
 
         if (user.getRoleId() == 0) {
             page = Path.ADMIN_PAGE;
-
-
         } else {
             if (user.isBlocked()) {
                 throw new AppException("user is blocked");
@@ -50,7 +48,9 @@ public class LoginCommand extends Command {
 
         session.setAttribute("user", user);
         session.setAttribute("userId", userId);
+        session.setAttribute("successLogin", true);
         session.setAttribute("themesList", new ThemeDaoImpl().getThemes());
+
         return page;
     }
 }

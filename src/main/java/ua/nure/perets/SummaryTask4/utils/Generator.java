@@ -16,8 +16,8 @@ import java.util.Map;
 
 public class Generator {
 
-    private static final String pathForSaving = "C:\\SummaryTask4\\Reports\\TestResult.pdf";
-    private static final String pathForPattern = "C:\\SummaryTask4\\ReportGenerator\\jrxml\\template.jrxml";
+    private static final String pathForSaving = "C:\\SummaryTask4\\reports\\TestResult.pdf";
+    private static final String pathForPattern = "C:\\SummaryTask4\\reportGenerator\\jrxml\\template.jrxml";
     private static final String jasperFileName = "D:\\EPAM\\SummaryTask4\\ReportGenerator\\jrxml\\template.jasper";
 
 

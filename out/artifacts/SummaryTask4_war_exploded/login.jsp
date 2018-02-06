@@ -20,6 +20,17 @@
 </head>
 <title>Login page</title>
 <body>
+
+
+<c:if test="${sessionScope.successLogin}">
+    <c:if test="${sessionScope.user.roleId eq 0}">
+        <jsp:forward page="WEB-INF/jsp/admin/admin.jsp"/>
+    </c:if>
+    <c:if test="${sessionScope.user.roleId eq 1}">
+        <jsp:forward page="WEB-INF/jsp/client/client.jsp"/>
+    </c:if>
+</c:if>
+
 <nav class="navbar navbar-default">
     <div class="container">
         <div class="navbar-header">

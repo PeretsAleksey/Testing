@@ -18,7 +18,7 @@ public class GetUsersCommand extends Command {
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException, AppException, SQLException {
 
-        HttpSession session = req.getSession();
+        HttpSession session = req.getSession(false);
         String page = Path.ERROR_PAGE;
         User user = (User) session.getAttribute("user");
         UserDaoImpl userDao = new UserDaoImpl();

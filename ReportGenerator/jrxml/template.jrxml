@@ -3,7 +3,7 @@
 	<property name="ireport.zoom" value="1.7715610000000075"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<style name="style1" isDefault="true" pdfFontName="./font/ARIAL.TTF" pdfEncoding="Cp1251"/>
+	<style name="style1" isDefault="true" pdfFontName="font/ARIAL.TTF" pdfEncoding="Cp1251"/>
 	<style name="table">
 		<box>
 			<pen lineWidth="1.0" lineColor="#000000"/>
