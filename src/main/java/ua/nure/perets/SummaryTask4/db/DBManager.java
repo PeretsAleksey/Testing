@@ -1,6 +1,7 @@
 package ua.nure.perets.SummaryTask4.db;
 
 import javax.naming.InitialContext;
+import javax.naming.NamingException;
 import javax.sql.DataSource;
 import java.sql.*;
 
@@ -51,8 +52,8 @@ public class DBManager {
             e.printStackTrace();
         }
         return ds.getConnection();
-    }*/
-
+    }
+*/
     public static PreparedStatement getPreparedStatement(Connection connection, String query) {
         PreparedStatement preparedStatement = null;
         try {

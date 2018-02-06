@@ -16,9 +16,8 @@ import java.util.Map;
 
 public class Generator {
 
-    private static final String pathForSaving = "C:\\SummaryTask4\\reports\\TestResult.pdf";
-    private static final String pathForPattern = "C:\\SummaryTask4\\reportGenerator\\jrxml\\template.jrxml";
-    private static final String jasperFileName = "D:\\EPAM\\SummaryTask4\\ReportGenerator\\jrxml\\template.jasper";
+    private static final String pathForSaving = "C:\\SummaryTask4\\reports\\report.pdf";
+    private static final String pathForPattern = "C:\\SummaryTask4\\reportGenerator\\jrxml\\report.jrxml";
 
 
     public boolean createReports() throws DBException {
@@ -27,7 +26,7 @@ public class Generator {
 
 
 
-            /*System.out.println("Начало генерации отчёта");
+          /*  System.out.println("Начало генерации отчёта");
             UserTestDaoImpl userTestDao = new UserTestDaoImpl();
             List<UserTest> userTestList = userTestDao.getUsersTests();
 
@@ -47,7 +46,7 @@ public class Generator {
             List<UserTest> userTestList = userTestDao.getUsersTests();
 
             JRBeanCollectionDataSource beanColDataSource = new JRBeanCollectionDataSource(userTestList);
-            Map<String, Object> parameters = new HashMap<String, Object>();
+            Map<String, Object> parameters = new HashMap<>();
             parameters.put("DATE", new Date());
             File reportPattern = new File(pathForPattern);
             JasperDesign jasperDesign = JRXmlLoader.load(reportPattern);
