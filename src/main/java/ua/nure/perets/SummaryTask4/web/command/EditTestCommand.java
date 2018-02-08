@@ -1,5 +1,6 @@
 package ua.nure.perets.SummaryTask4.web.command;
 
+import org.apache.log4j.Logger;
 import ua.nure.perets.SummaryTask4.Path;
 import ua.nure.perets.SummaryTask4.bean.Question;
 import ua.nure.perets.SummaryTask4.bean.User;
@@ -16,6 +17,8 @@ import java.util.List;
 
 public class EditTestCommand extends Command {
 
+    private static final Logger LOG = Logger.getLogger(EditTestCommand.class);
+
     private static final String TEST_TIME = "testTime";
     private static final String TEST_DIFFICULTY = "testDifficulty";
     private static final String TEST_ID = "testId";
@@ -24,10 +27,14 @@ public class EditTestCommand extends Command {
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException, AppException, SQLException {
 
+        LOG.debug("Command starts");
+
         HttpSession session = req.getSession(false);
         String page = Path.ERROR_PAGE;
         QuestionDaoImpl questionDao = new QuestionDaoImpl();
         User user = (User) session.getAttribute("user");
+
+        LOG.trace("Session attribute: user --> " + user);
 
         if (user.getRoleId() == 1) {
             throw new AppException("access denied");
@@ -67,12 +74,19 @@ public class EditTestCommand extends Command {
         List<Question> list =  questionDao.findQuestionsByTestId(testId);
 
         session.setAttribute(TEST_NAME, testName);
+        LOG.trace("Set the session attribute: testName --> " + testName);
         session.setAttribute(TEST_DIFFICULTY, testDifficulty);
+        LOG.trace("Set the session attribute: testDifficulty --> " + testDifficulty);
         session.setAttribute(TEST_TIME, testTime);
+        LOG.trace("Set the session attribute: testTime --> " + testTime);
         session.setAttribute("questionList", list);
+        LOG.trace("Set the session attribute: questionList --> " + list);
         session.setAttribute(TEST_ID, testId);
+        LOG.trace("Set the session attribute: testId --> " + testId);
 
         page = Path.EDIT_TEST_PAGE;
+
+        LOG.debug("Command finished");
 
         return page;
     }

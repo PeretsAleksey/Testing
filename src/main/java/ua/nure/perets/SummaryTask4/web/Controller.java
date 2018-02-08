@@ -1,5 +1,6 @@
 package ua.nure.perets.SummaryTask4.web;
 
+import org.apache.log4j.Logger;
 import ua.nure.perets.SummaryTask4.Path;
 import ua.nure.perets.SummaryTask4.exeption.AppException;
 import ua.nure.perets.SummaryTask4.web.command.Command;
@@ -14,33 +15,31 @@ import java.sql.SQLException;
 
 public class Controller extends HttpServlet {
 
+    private static final Logger LOG = Logger.getLogger(Controller.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+        LOG.trace("DoGet");
         process(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        LOG.trace("DoPost");
         process(req, resp);
     }
 
     private void process(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
+        String forward = Path.ERROR_PAGE;
+
         String commandName = req.getParameter("command");
         System.out.println(commandName);
-
-        if (!commandName.equals("login") && req.getSession().getAttribute("user") == null
-                && !commandName.equals("RegistrationPage") && !commandName.equals("registration")) {
-            req.getRequestDispatcher(Path.LOGIN_PAGE).forward(req, resp);
-            req.getSession().invalidate();
-            return;
-        }
 
         Command command = CommandContainer.get(commandName);
         System.out.println(command);
 
-        String forward = Path.ERROR_PAGE;
+        LOG.debug("command: " + forward);
 
         try {
             forward = command.execute(req, resp);

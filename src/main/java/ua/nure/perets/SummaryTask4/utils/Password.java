@@ -1,5 +1,6 @@
 package ua.nure.perets.SummaryTask4.utils;
 
+import org.apache.log4j.Logger;
 import ua.nure.perets.SummaryTask4.exeption.AppException;
 
 import java.io.UnsupportedEncodingException;
@@ -7,6 +8,9 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class Password {
+
+    private static final Logger LOG = Logger.getLogger(Password.class);
+
     private static final String ERROR = "Password hash error";
 
     private static final char[] HEX_DIGITS = {'0', '1', '2', '3', '4', '5',
@@ -19,18 +23,19 @@ public class Password {
      * @return hashed value
      * @throws AppException contains UnsupportedEncodingException, NoSuchAlgorithmException
      */
-
     public static String hash(String str) throws AppException {
         MessageDigest digest;
         StringBuffer hexString = new StringBuffer();
         try {
             digest = MessageDigest.getInstance("SHA-512");
         } catch (NoSuchAlgorithmException e) {
+            LOG.error(ERROR);
             throw new AppException(ERROR, e);
         }
         try {
             digest.update(str.getBytes("UTF-8"));
         } catch (UnsupportedEncodingException e) {
+            LOG.error(ERROR);
             throw new AppException(ERROR, e);
         }
         for (byte d : digest.digest()) {
@@ -43,7 +48,6 @@ public class Password {
      * @param x byte value
      * @return hashed char value
      */
-
     private static char getFirstHexDigit(byte x) {
         return HEX_DIGITS[(0xFF & x) / 16];
     }

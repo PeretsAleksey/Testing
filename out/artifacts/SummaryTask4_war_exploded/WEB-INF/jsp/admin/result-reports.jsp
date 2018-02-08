@@ -15,9 +15,10 @@
 <body>
 <br><br><br>
 <div class="container">
-    <div class="center">
+    <div align="center">
+        <h4><fmt:message key="report_formed"/></h4>
+        <br>
         <c:if test="${sessionScope.user.roleId eq 0}">
-            <fmt:message key="report_formed"/>
             <form action="controller" method="post">
                 <input type="hidden" name="command" value="homepage">
                 <input type="submit" class="btn btn-default" value="<fmt:message key="users_jsp.homepage"/>">

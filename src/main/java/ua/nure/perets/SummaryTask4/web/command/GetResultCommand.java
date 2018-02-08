@@ -1,5 +1,6 @@
 package ua.nure.perets.SummaryTask4.web.command;
 
+import org.apache.log4j.Logger;
 import ua.nure.perets.SummaryTask4.Path;
 import ua.nure.perets.SummaryTask4.bean.User;
 import ua.nure.perets.SummaryTask4.bean.UserTest;
@@ -18,14 +19,19 @@ import java.util.List;
 
 public class GetResultCommand extends Command {
 
+    private static final Logger LOG = Logger.getLogger(GetResultCommand.class);
+
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException, AppException, SQLException {
+
+        LOG.debug("Command starts");
 
         String page = Path.TEST_RESULT_PAGE;
 
         HttpSession session = req.getSession(false);
 
         User user = (User) session.getAttribute("user");
+        LOG.trace("Session attribute: user --> " + user);
 
         UserTestDaoImpl userTestDao = new UserTestDaoImpl();
 
@@ -40,6 +46,9 @@ public class GetResultCommand extends Command {
         Collections.sort(testList, new Comparators.CompareByUsersTestsId());
 
         session.setAttribute("testsResult", testList);
+        LOG.trace("Set the session attribute: testsResult --> " + testList);
+
+        LOG.debug("Command finished");
 
         return page;
     }

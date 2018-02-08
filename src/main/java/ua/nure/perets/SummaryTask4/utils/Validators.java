@@ -17,7 +17,6 @@ public class Validators {
      * @param length maximum length of the variable in database
      * @return error message or null if validation was successful
      */
-
     public static String validateEMail(String email, int length) {
 
         if (email == null) {
@@ -61,7 +60,6 @@ public class Validators {
         if (m.group().length() != field.length()) {
             return FIELD + fieldName + INVALID_SYMBOLS;
         }
-
         return null;
     }
 
@@ -73,7 +71,6 @@ public class Validators {
      * @param length    maximum length of the variable in database
      * @return error message or null if validation was successful
      */
-
     public static String validateSentences(String field, String fieldName,
                                            int length) {
 
@@ -101,7 +98,6 @@ public class Validators {
             return FIELD + fieldName + INVALID_SYMBOLS;
 
         }
-
         return null;
     }
 
@@ -113,7 +109,6 @@ public class Validators {
      * @param length    maximum length of the variable in database
      * @return error message or null if validation was successful
      */
-
     public static String validateOnlyLatinFields(String field, String fieldName, int length) {
 
         if (field.length() == 0) {
@@ -131,7 +126,6 @@ public class Validators {
         if (m.group().length() != field.length()) {
             return FIELD + fieldName + INVALID_SYMBOLS;
         }
-
         return null;
     }
 
@@ -143,7 +137,6 @@ public class Validators {
      * @param length    maximum length of the variable in database
      * @return error message or null if validation was successful
      */
-
     public static String validateNumbers(String number, String fieldName, int length) {
 
         if (number.length() == 0) {
@@ -159,7 +152,6 @@ public class Validators {
             return null;
 
         }
-
         return FIELD + fieldName + INVALID_SYMBOLS;
     }
 
@@ -184,7 +176,6 @@ public class Validators {
         if (list.contains(difficulty)) {
             return null;
         }
-
         return "invalid difficulty, only \"elementary\", \"advanced\",\"proficient\" are available";
     }
 }

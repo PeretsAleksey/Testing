@@ -3,7 +3,6 @@ package ua.nure.perets.SummaryTask4.utils;
 import ua.nure.perets.SummaryTask4.bean.Test;
 import ua.nure.perets.SummaryTask4.bean.UserTest;
 
-import java.io.Serializable;
 import java.util.Comparator;
 
 public class Comparators {
@@ -11,39 +10,30 @@ public class Comparators {
     /**
      * Comparator that compares objects by name value
      */
-
-    public static class CompareByName implements Comparator<Test>, Serializable {
-
-        private static final long serialVersionUID = -2382790006724690579L;
+    public static class CompareByName implements Comparator<Test> {
 
         @Override
         public int compare(Test t1, Test t2) {
             return t1.getName().compareTo(t2.getName());
         }
-
     }
 
     /**
      * Comparator that compares objects by test id value
      */
-    public static class CompareByUsersTestsId implements Comparator<UserTest>, Serializable {
-
-        private static final long serialVersionUID = 8952104900287006111L;
+    public static class CompareByUsersTestsId implements Comparator<UserTest> {
 
         @Override
         public int compare(UserTest ut1, UserTest ut2) {
 
             return ut2.getId() - ut1.getId();
         }
-
     }
 
     /**
      * Comparator that compares objects by difficulty value
      */
-    public static class CompareByDifficulty implements Comparator<Test>, Serializable {
-
-        private static final long serialVersionUID = -2073593354243486823L;
+    public static class CompareByDifficulty implements Comparator<Test> {
 
         @Override
         public int compare(Test t1, Test t2) {
@@ -69,25 +59,19 @@ public class Comparators {
             } else if (diff2.equals("proficient")) {
                 temp2 = 3;
             }
-
             return temp1 - temp2;
         }
-
     }
 
     /**
      * Comparator that compares object by question count value
      */
-
-    public static class CompareByQuestionsCount implements Comparator<Test>, Serializable {
-
-        private static final long serialVersionUID = 376967487844228899L;
+    public static class CompareByQuestionsCount implements Comparator<Test> {
 
         @Override
         public int compare(Test t1, Test t2) {
             return t1.getQuestionsCount() - t2.getQuestionsCount();
         }
-
     }
 
 }

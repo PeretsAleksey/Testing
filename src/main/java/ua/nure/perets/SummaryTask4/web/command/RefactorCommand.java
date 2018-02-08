@@ -1,5 +1,6 @@
 package ua.nure.perets.SummaryTask4.web.command;
 
+import org.apache.log4j.Logger;
 import ua.nure.perets.SummaryTask4.Path;
 import ua.nure.perets.SummaryTask4.bean.Answer;
 import ua.nure.perets.SummaryTask4.bean.User;
@@ -20,6 +21,8 @@ import java.util.List;
 
 public class RefactorCommand extends Command {
 
+    private static final Logger LOG = Logger.getLogger(RefactorCommand.class);
+
     private static final String NAME = "name";
     private static final String THEME = "Theme";
     private static final String TYPE = "type";
@@ -33,6 +36,8 @@ public class RefactorCommand extends Command {
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException, AppException, SQLException {
 
+        LOG.debug("Command starts");
+
         String page = Path.ERROR_PAGE;
 
         ThemeDaoImpl themeDao = new ThemeDaoImpl();
@@ -43,11 +48,14 @@ public class RefactorCommand extends Command {
         HttpSession session = req.getSession(false);
 
         User user = (User) session.getAttribute("user");
+        LOG.trace("Session attribute: user --> " + user);
+
         if (user.getRoleId() == 1) {
             throw new AppException("access denied");
         }
 
         String name = req.getParameter(NAME);
+        LOG.trace("Request parameter: name --> " + name);
 
         if ("theme".equals(session.getAttribute(NAME))) {
 
@@ -207,10 +215,11 @@ public class RefactorCommand extends Command {
             req.setAttribute("type", (String) session.getAttribute(NAME));
         }
 
-
         session.removeAttribute(NAME);
 
         page = Path.ACTION_PAGE;
+
+        LOG.debug("Command finished");
 
         return page;
     }

@@ -58,4 +58,9 @@
         <param-value>/WEB-INF/locales.properties</param-value>
     </context-param>
 
+    <error-page>
+        <error-code>404</error-code>
+        <location>/404.htm</location>
+    </error-page>
+
 </web-app>

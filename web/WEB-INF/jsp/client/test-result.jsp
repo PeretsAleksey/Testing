@@ -61,6 +61,7 @@
                 </tr>
             </c:forEach>
         </table>
+
         <br>
         <form action="controller" method="post">
             <input type="hidden" name="command" value="homepage">

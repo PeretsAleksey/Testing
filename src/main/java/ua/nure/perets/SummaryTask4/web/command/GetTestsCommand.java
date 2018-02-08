@@ -1,5 +1,6 @@
 package ua.nure.perets.SummaryTask4.web.command;
 
+import org.apache.log4j.Logger;
 import ua.nure.perets.SummaryTask4.Path;
 import ua.nure.perets.SummaryTask4.bean.Test;
 import ua.nure.perets.SummaryTask4.bean.User;
@@ -18,11 +19,15 @@ import java.util.List;
 
 public class GetTestsCommand extends Command {
 
+    private static final Logger LOG = Logger.getLogger(GetTestsCommand.class);
+
     private static final String THEME = "theme";
     private static final String THEME_NAME = "themeName";
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException, AppException, SQLException {
+
+        LOG.debug("Command starts");
 
         String page = Path.ERROR_PAGE;
         TestDaoImpl testDao = new TestDaoImpl();
@@ -40,6 +45,7 @@ public class GetTestsCommand extends Command {
         }
 
         String sort = req.getParameter("sort");
+        LOG.trace("Request parameter: sort --> " + sort);
 
         List<Test> tests = testDao.findTestsByTheme(theme);
 
@@ -51,7 +57,6 @@ public class GetTestsCommand extends Command {
             Collections.sort(tests, new Comparators.CompareByQuestionsCount());
         }
 
-        System.out.println(tests);
         String themeName;
 
         if (req.getParameter(THEME_NAME) != null) {
@@ -61,16 +66,23 @@ public class GetTestsCommand extends Command {
         }
 
         User user = (User) session.getAttribute("user");
+        LOG.trace("Session attribute: user --> " + user);
 
         if (user.getRoleId() == 1 && tests.size() == 0) {
             throw new AppException("No tests in this theme");
         }
 
         session.setAttribute(THEME_NAME, themeName);
+        LOG.trace("Set the session attribute: themeName --> " + themeName);
         session.setAttribute("tests", tests);
+        LOG.trace("Set the session attribute: tests --> " + tests);
         session.setAttribute(THEME, theme);
+        LOG.trace("Set the session attribute: theme --> " + theme);
 
         page = Path.TEST_PAGE;
+
+        LOG.debug("Command finished");
+
         return page;
 
     }

@@ -73,7 +73,7 @@
         </div>
         <form action="controller" method="post">
             <div align="center">
-                <input type="hidden" name="command" value="anycommand">
+                <input type="hidden" name="command" value="loginpage">
                 <input type="submit" class="btn btn-default" value="Login page">
             </div>
         </form>

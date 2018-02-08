@@ -1,5 +1,6 @@
 package ua.nure.perets.SummaryTask4.web.command;
 
+import org.apache.log4j.Logger;
 import ua.nure.perets.SummaryTask4.Path;
 import ua.nure.perets.SummaryTask4.bean.User;
 import ua.nure.perets.SummaryTask4.dao.impl.UserDaoImpl;
@@ -19,11 +20,15 @@ import static ua.nure.perets.SummaryTask4.utils.EmailSender.sender;
 
 public class RegistrationCommand extends Command {
 
+    private static final Logger LOG = Logger.getLogger(RegistrationCommand.class);
+
     private static final String PASSWORD = "Password";
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException,
             AppException, SQLException {
+
+        LOG.debug("Command starts");
 
         String page = Path.ERROR_PAGE;
 
@@ -77,16 +82,21 @@ public class RegistrationCommand extends Command {
 
         String eMail = req.getParameter("setEMail");
 
-        if (Validators.validateEMail(eMail, 30) != null) {
-            throw new AppException(Validators.validateEMail(eMail, 30));
+        if (Validators.validateEMail(eMail, 150) != null) {
+            throw new AppException(Validators.validateEMail(eMail, 150));
         }
 
         System.out.println(Password.hash(password).length());
         userDao.createUser(login, Password.hash(password), fName, lName, eMail);
 
         page = Path.ACTION_PAGE;
+
         req.setAttribute("register", true);
+
         sender(eMail, fName);
+
+        LOG.debug("Command finished");
+
         return page;
     }
 }

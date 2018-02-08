@@ -1,5 +1,6 @@
 package ua.nure.perets.SummaryTask4.web.command;
 
+import org.apache.log4j.Logger;
 import ua.nure.perets.SummaryTask4.Path;
 import ua.nure.perets.SummaryTask4.exeption.AppException;
 
@@ -11,10 +12,15 @@ import java.sql.SQLException;
 
 public class SettingsCommand extends Command {
 
+    private static final Logger LOG = Logger.getLogger(SettingsCommand.class);
+
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException, AppException, SQLException {
-        String page = Path.SETTINGS_PAGE;
 
-        return page;
+        LOG.debug("Command starts");
+        LOG.debug("Command finished");
+        return Path.SETTINGS_PAGE;
+
+
     }
 }

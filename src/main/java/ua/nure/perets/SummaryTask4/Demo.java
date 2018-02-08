@@ -2,7 +2,7 @@ package ua.nure.perets.SummaryTask4;
 
 import ua.nure.perets.SummaryTask4.dao.impl.*;
 import ua.nure.perets.SummaryTask4.exeption.DBException;
-import ua.nure.perets.SummaryTask4.utils.Generator;
+import ua.nure.perets.SummaryTask4.utils.ReportGenerator;
 
 import java.sql.SQLException;
 
@@ -67,7 +67,7 @@ public class Demo {
 
 //-------------------------------------
 
-        new Generator().createReports();
+        new ReportGenerator().createReports();
 
     }
 }

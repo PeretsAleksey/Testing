@@ -1,5 +1,6 @@
 package ua.nure.perets.SummaryTask4.web.command;
 
+import org.apache.log4j.Logger;
 import ua.nure.perets.SummaryTask4.Path;
 import ua.nure.perets.SummaryTask4.bean.Answer;
 import ua.nure.perets.SummaryTask4.dao.impl.AnswerDaoImpl;
@@ -15,8 +16,12 @@ import java.util.List;
 
 public class AnswerStatusCommand extends Command {
 
+    private static final Logger LOG = Logger.getLogger(AnswerStatusCommand.class);
+
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException, AppException, SQLException {
+
+        LOG.debug("Command starts");
 
         String page = Path.ERROR_PAGE;
 
@@ -26,11 +31,18 @@ public class AnswerStatusCommand extends Command {
 
         String id = req.getParameter("answerId");
 
+        LOG.trace("Request parameter: id --> " + id);
+
         answerDao.updateAnswerStatusById(id);
 
         List<Answer> list = answerDao.findAnswersByQuestionId((Integer) session.getAttribute("questionId"));
         session.setAttribute("answersList", list);
+        LOG.trace("Set the session attribute: answersList --> " + list);
+
         page = Path.EDIT_QUESTION_PAGE;
+
+        LOG.debug("Command finished");
+
         return page;
     }
 }

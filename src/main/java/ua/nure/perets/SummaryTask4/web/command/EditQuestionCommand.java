@@ -1,5 +1,6 @@
 package ua.nure.perets.SummaryTask4.web.command;
 
+import org.apache.log4j.Logger;
 import ua.nure.perets.SummaryTask4.Path;
 import ua.nure.perets.SummaryTask4.bean.Answer;
 import ua.nure.perets.SummaryTask4.bean.User;
@@ -16,11 +17,15 @@ import java.util.List;
 
 public class EditQuestionCommand extends Command {
 
+    private static final Logger LOG = Logger.getLogger(EditQuestionCommand.class);
+
     private static final String QUESTION_NAME = "questionName";
     private static final String QUESTION_ID = "questionId";
 
     @Override
     public String execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException, AppException, SQLException {
+
+        LOG.debug("Command starts");
 
         String page = Path.ERROR_PAGE;
 
@@ -29,6 +34,7 @@ public class EditQuestionCommand extends Command {
         AnswerDaoImpl answerDao = new AnswerDaoImpl();
 
         User user = (User) session.getAttribute("user");
+        LOG.trace("Session attribute: user --> " + user);
 
         if (user.getRoleId() == 1) {
             throw new AppException("access denied");
@@ -51,10 +57,15 @@ public class EditQuestionCommand extends Command {
         List<Answer> answers = answerDao.findAnswersByQuestionId(questionId);
 
         session.setAttribute("questionId", questionId);
+        LOG.trace("Set the session attribute: questionId --> " + questionId);
         session.setAttribute("answersList", answers);
+        LOG.trace("Set the session attribute: answersList --> " + answers);
         session.setAttribute("questionName", questionName);
+        LOG.trace("Set the session attribute: questionName --> " + questionName);
 
         page = Path.EDIT_QUESTION_PAGE;
+
+        LOG.debug("Command finished");
 
         return page;
     }

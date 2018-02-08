@@ -34,6 +34,7 @@ public class CommandContainer {
         commands.put("reports", new GeneratorReportsCommand());
         commands.put("changeLocale", new ChangeLocaleCommand());
         commands.put("noCommand", new NoCommand());
+        commands.put("loginpage", new LoginPageCommand());
 
         LOG.debug("Command container was successfully initialized");
         LOG.trace("Number of commands --> " + commands.size());

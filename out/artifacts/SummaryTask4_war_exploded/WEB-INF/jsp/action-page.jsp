@@ -39,7 +39,7 @@
         <br>
         <form action="controller" method="post">
             <div align="center">
-                <input type="hidden" name="command" value="anycommand"><br>
+                <input type="hidden" name="command" value="loginpage"><br>
                 <input type="submit" class="btn btn-default" value="Login page">
             </div>
         </form>
