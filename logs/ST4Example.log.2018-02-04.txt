@@ -1,0 +1,79 @@
+2018-02-04 00:00 [TRACE]          CommandContainer:    45 - Command not found, name --> null
+2018-02-04 00:00 [DEBUG]                 NoCommand:    20 - Command starts
+2018-02-04 00:00 [ERROR]                 NoCommand:    24 - Set the request attribute: errorMessage --> No such command
+2018-02-04 00:00 [DEBUG]                 NoCommand:    26 - Command finished
+2018-02-04 00:01 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 00:01 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 00:01 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 00:01 [TRACE]          CommandContainer:    45 - Command not found, name --> null
+2018-02-04 00:01 [DEBUG]                 NoCommand:    20 - Command starts
+2018-02-04 00:01 [ERROR]                 NoCommand:    24 - Set the request attribute: errorMessage --> No such command
+2018-02-04 00:01 [DEBUG]                 NoCommand:    26 - Command finished
+2018-02-04 18:05 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:05 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:05 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 18:06 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:06 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:06 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 18:08 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:08 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:08 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 18:11 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:11 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:11 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 18:12 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:12 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:12 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 18:12 [TRACE]          CommandContainer:    45 - Command not found, name --> null
+2018-02-04 18:12 [DEBUG]                 NoCommand:    20 - Command starts
+2018-02-04 18:12 [ERROR]                 NoCommand:    24 - Set the request attribute: errorMessage --> No such command
+2018-02-04 18:12 [DEBUG]                 NoCommand:    26 - Command finished
+2018-02-04 18:12 [TRACE]          CommandContainer:    45 - Command not found, name --> null
+2018-02-04 18:12 [DEBUG]                 NoCommand:    20 - Command starts
+2018-02-04 18:12 [ERROR]                 NoCommand:    24 - Set the request attribute: errorMessage --> No such command
+2018-02-04 18:12 [DEBUG]                 NoCommand:    26 - Command finished
+2018-02-04 18:12 [TRACE]          CommandContainer:    45 - Command not found, name --> null
+2018-02-04 18:12 [DEBUG]                 NoCommand:    20 - Command starts
+2018-02-04 18:12 [ERROR]                 NoCommand:    24 - Set the request attribute: errorMessage --> No such command
+2018-02-04 18:12 [DEBUG]                 NoCommand:    26 - Command finished
+2018-02-04 18:13 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:13 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:13 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 18:13 [TRACE]          CommandContainer:    45 - Command not found, name --> anycommand
+2018-02-04 18:13 [DEBUG]                 NoCommand:    20 - Command starts
+2018-02-04 18:13 [ERROR]                 NoCommand:    24 - Set the request attribute: errorMessage --> No such command
+2018-02-04 18:13 [DEBUG]                 NoCommand:    26 - Command finished
+2018-02-04 18:13 [TRACE]          CommandContainer:    45 - Command not found, name --> anycommand
+2018-02-04 18:13 [DEBUG]                 NoCommand:    20 - Command starts
+2018-02-04 18:13 [ERROR]                 NoCommand:    24 - Set the request attribute: errorMessage --> No such command
+2018-02-04 18:13 [DEBUG]                 NoCommand:    26 - Command finished
+2018-02-04 18:13 [TRACE]          CommandContainer:    45 - Command not found, name --> anycommand
+2018-02-04 18:13 [DEBUG]                 NoCommand:    20 - Command starts
+2018-02-04 18:13 [ERROR]                 NoCommand:    24 - Set the request attribute: errorMessage --> No such command
+2018-02-04 18:13 [DEBUG]                 NoCommand:    26 - Command finished
+2018-02-04 18:14 [TRACE]          CommandContainer:    45 - Command not found, name --> anycommand
+2018-02-04 18:14 [DEBUG]                 NoCommand:    20 - Command starts
+2018-02-04 18:14 [ERROR]                 NoCommand:    24 - Set the request attribute: errorMessage --> No such command
+2018-02-04 18:14 [DEBUG]                 NoCommand:    26 - Command finished
+2018-02-04 18:14 [TRACE]          CommandContainer:    45 - Command not found, name --> anycommand
+2018-02-04 18:14 [DEBUG]                 NoCommand:    20 - Command starts
+2018-02-04 18:14 [ERROR]                 NoCommand:    24 - Set the request attribute: errorMessage --> No such command
+2018-02-04 18:14 [DEBUG]                 NoCommand:    26 - Command finished
+2018-02-04 18:15 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:15 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:15 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 18:17 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:17 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:17 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 18:18 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:18 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:18 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 18:19 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:19 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:19 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 18:28 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:28 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:28 [TRACE]          CommandContainer:    39 - Number of commands --> 20
+2018-02-04 18:29 [DEBUG]           ContextListener:    94 - Log4j has been initialized
+2018-02-04 18:29 [DEBUG]          CommandContainer:    38 - Command container was successfully initialized
+2018-02-04 18:29 [TRACE]          CommandContainer:    39 - Number of commands --> 20
